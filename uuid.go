@@ -1,4 +1,4 @@
-// protobuf-uuid
+// pbuuid
 // A Go package to wrap UUIDs in byte arrays in protobuf.
 // Copyright (c) 2017 Charles Francoise. All Rights Reserved
 //
@@ -27,7 +27,7 @@ package pbuuid
 
 import (
 	guuid "github.com/google/uuid"
-	proto "github.com/loderunner/pbuuid"
+	proto "github.com/loderunner/pbuuid/proto"
 )
 
 // UUID converts a `loderunner.pbuuid.UUID` proto to a `uuid.UUID`.
@@ -42,8 +42,8 @@ func UUID(u *proto.UUID) (guuid.UUID, error) {
 // It returns an error if the resulting UUID is invalid.
 func UUIDProto(g guuid.UUID) (*proto.UUID, error) {
 	b, err := g.MarshalBinary()
-	u := &proto.UUID{
-		bytes: b,
+	u := proto.UUID{
+		Bytes: b,
 	}
 	return &u, err
 }

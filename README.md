@@ -1,4 +1,4 @@
-# protobuf-uuid
+# pbuuid
 A Go package to wrap UUIDs in byte arrays in protobuf.
 
 ## Licence
